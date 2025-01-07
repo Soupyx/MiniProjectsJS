@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * (max + 1));
+        }
+
+        function guess() {
+            let number = prompt("Choisissez un nombre") * 1
+            const randomNumber = getRandomInt(100)
+            isRight(randomNumber, number)
+        }
+
+        function isRight(n, number) {
+            for (let i = 10; i > 1; i--) {
+                if (number === n) {
+                    console.log(`Vous avez gagné ! Le nombre était bien ${number}`)
+                    return true
+                }
+                else {
+                    if (number > n){
+                        console.log(`Le nombre ${number} est trop grand, réessayé`)
+                        number = prompt(`Choisissez un nouveau nombre, plus que  ${i - 1} essaies`) * 1
+                    }
+                    else{
+                        console.log(`Le nombre ${number} est trop petit, réessayé`)
+                        number = prompt(`Choisissez un nouveau nombre, plus que  ${i - 1} essaies`) * 1
+                    } 
+                }
+            }
+            if (n !== number){
+                console.log("Vous avez perdu le jeu")
+            }
+        }
+
+        guess()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
