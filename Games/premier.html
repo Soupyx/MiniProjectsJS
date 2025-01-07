@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function guess(){
+            const number = prompt(`Veuillez saisir un nombre`) * 1
+            isPremier(number)
+        }
+
+        function isPremier(n){
+            if (n <= 1){
+                alert (`${n} n'est pas un nombre premier.`)
+                return false
+            }
+            if (n === 2){
+                alert (`2 est le seul nombre pair qui est premier.`)
+                return true
+            }
+            for (let i = n - 1; i > 1; i--){
+                if (n % i === 0){
+                    alert (`${n} n'est pas un nombre premier.`)
+                    return false
+                }
+                else {
+                    alert (`${n} est un nombre premier.`)
+                    return true
+                }
+            }
+        }
+
+        guess()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
