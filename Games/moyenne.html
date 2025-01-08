@@ -37,9 +37,15 @@
             return somme / notes.length
         }
 
+        const compareStudent = (a, b) => {
+            return a.moyenne - b.moyenne
+        } 
+
         for (let student of students){
             student.moyenne = moyenne(student.notes)
         }
+
+        students.sort(compareStudent)
 
         console.log(students)
 
