@@ -38,7 +38,7 @@
         }
 
         const compareStudent = (a, b) => {
-            return a.moyenne - b.moyenne
+            return b.moyenne - a.moyenne
         } 
 
         for (let student of students){
@@ -47,7 +47,15 @@
 
         students.sort(compareStudent)
 
-        console.log(students)
+        const formatStudent = (student) => {
+            return `${student.name} avec une moyenne de ${student.moyenne}`
+        }
+
+        console.log(`
+            Top 1 étudiant : ${formatStudent(students[0])}
+            Top 2 étudiant : ${formatStudent(students[1])}
+            Top 3 étudiant : ${formatStudent(students[2])}
+        `)
 
         
     </script>
