@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-
-    function isPalindrome(word) {
-       const reverse = word
-            .split("")
-            .reverse()
-            .join("")
-       return word.toUpperCase() === reverse.toUpperCase()
-    }
-
-    const words = {
-        kayak: true,
-        SOS: true,
-        Kayak: true,
-        Bonjour: false,
-    };
-
-    for (let word in words) {
-        if (isPalindrome(word) !== words[word]) {
-            console.error(`isPalindrome(${word}) failed`);
+        function isPalindrome (str) {
+            const letter = str.split("").reverse().join("")
+            return letter.toUpperCase() === str.toUpperCase()
         }
-    }
 
+        const words = {
+            kayak: true,
+            SOS: true,
+            Kayak: true,
+            Bonjour: false,
+        }
+
+        for(let word in words) {
+            if (isPalindrome(word) !== words[word]) {
+                console.error(`isPalindrome(${word})`)
+            }
+        }
     </script>
 </head>
-
 <body>
-
+    
 </body>
-
 </html>
